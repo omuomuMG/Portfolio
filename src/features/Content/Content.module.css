@@ -1,0 +1,13 @@
+.ContentWrapper {
+  height: 100vh;
+}
+
+.ContentCard {
+  height: 40%;
+  width: 30%;
+  background-color: red;
+}
+.ContentCard img {
+  margin-top: 5%;
+  height: 50%;
+}
