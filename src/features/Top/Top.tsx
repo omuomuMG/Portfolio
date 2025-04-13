@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { OrbitControls, Stars, Line } from "@react-three/drei";
 import * as THREE from "three";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
@@ -56,6 +56,8 @@ const Globe: React.FC = () => {
   const texture = new THREE.TextureLoader().load(
     "https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg"
   );
+
+
   return (
     <mesh ref={globeRef}>
       <sphereGeometry args={[EARTH_RADIUS, 64, 64]} />
@@ -291,6 +293,22 @@ const FlightRoutes: React.FC = () => {
   return <>{flights}</>;
 };
 
+const AnimatedCamera: React.FC = () => {
+  const { camera } = useThree();
+  const angularSpeed = 1; 
+
+  useFrame((state, delta) => {
+    const angle = angularSpeed * delta;
+    const { x, z } = camera.position;
+    // カメラを水平面上で回転させる
+    camera.position.x = x * Math.cos(angle) - z * Math.sin(angle);
+    camera.position.z = x * Math.sin(angle) + z * Math.cos(angle);
+    camera.lookAt(0, 0, 0);
+  });
+  return null;
+};
+
+
 // シーン全体の構成
 const Scene: React.FC = () => {
   return (
@@ -299,7 +317,7 @@ const Scene: React.FC = () => {
       <directionalLight position={[10, 10, 5]} intensity={1} />
       <Globe />
       <FlightRoutes />
-      <OrbitControls enableZoom={true} />
+      <OrbitControls enableZoom={false} />
       <Stars />
     </>
   );
@@ -309,7 +327,8 @@ const Scene: React.FC = () => {
 const App: React.FC = () => {
   return (
     <div className={styles.wrapper}>
-      <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
+     <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
+     <AnimatedCamera />
         <Scene />
       </Canvas>
     </div>
