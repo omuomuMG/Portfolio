@@ -57,7 +57,6 @@ const Globe: React.FC = () => {
     "https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg"
   );
 
-
   return (
     <mesh ref={globeRef}>
       <sphereGeometry args={[EARTH_RADIUS, 64, 64]} />
@@ -295,19 +294,17 @@ const FlightRoutes: React.FC = () => {
 
 const AnimatedCamera: React.FC = () => {
   const { camera } = useThree();
-  const angularSpeed = 1; 
+  const angularSpeed = 0.5;
 
   useFrame((state, delta) => {
     const angle = angularSpeed * delta;
     const { x, z } = camera.position;
-    // カメラを水平面上で回転させる
     camera.position.x = x * Math.cos(angle) - z * Math.sin(angle);
     camera.position.z = x * Math.sin(angle) + z * Math.cos(angle);
     camera.lookAt(0, 0, 0);
   });
   return null;
 };
-
 
 // シーン全体の構成
 const Scene: React.FC = () => {
@@ -318,7 +315,7 @@ const Scene: React.FC = () => {
       <Globe />
       <FlightRoutes />
       <OrbitControls enableZoom={false} />
-      <Stars />
+      {/* <Stars /> */}
     </>
   );
 };
@@ -327,8 +324,8 @@ const Scene: React.FC = () => {
 const App: React.FC = () => {
   return (
     <div className={styles.wrapper}>
-     <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
-     <AnimatedCamera />
+      <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
+        <AnimatedCamera />
         <Scene />
       </Canvas>
     </div>
