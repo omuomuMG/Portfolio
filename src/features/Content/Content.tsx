@@ -1,20 +1,46 @@
 import React from "react";
 import styles from "./Content.module.css";
 import Modal from "./Modal";
+import { FaPython } from "react-icons/fa"; // Pythonアイコン
+import { SiQt } from "react-icons/si"; // Qtアイコン
 
 interface ContentItem {
   id: number;
   title: string;
-  description: string;
+  contentInfo: string;
   imageUrl: string;
+  description: string;
+  techStack: string[];
+  downloadUrl: string;
+  githubUrl: string;
+  statistics?: string;
+  icons?: React.ReactNode[];
 }
 const contents: ContentItem[] = [
   {
     id: 1,
     title: "Anki Farm Tycoon",
-    description: "学習をゲーム化するソフトウェア",
+    contentInfo: "学習をゲーム化するソフトウェア",
     imageUrl:
       "https://github.com/user-attachments/assets/479565f4-5544-4d39-990b-680020d5b24e",
+    description:
+      "「Anki-Farm-Tycoon」は、世界中で人気のフラッシュカードアプリAnkiの拡張機能として個人開発したプロダクトです。語学学習を続ける上でAnkiは非常に効率的なツールですが、学習が単調で退屈になりやすく、継続が難しいという課題がありました。そこで「学習そのものを楽しくし、継続性を高めたい」と考え、ゲーム要素（ゲーミフィケーション）を取り入れた拡張機能として開発しました。\n\nAnki-Farm-Tycoonでは、フラッシュカードに正解するたびに農場の動物が成長したり、生産物が増えたり、資産を増やして「億万長者」を目指すという要素を盛り込んでいます。学習の進捗が可視化されることで、ユーザーのモチベーション維持にもつながっています。\n\n使用技術は、PythonとPyQtです。設計のポイントはオブジェクト指向を徹底し、動物や農場、生産物といった要素をクラスで抽象化しました。これにより、今後の機能追加やユーザー要望への対応が容易になっています。また、UIはPyQtで直感的で楽しいユーザー体験を意識して作っています。\n\nリリース後は世界中のユーザーからGitHub Issueやダウンロードページ経由で多くの意見や要望をいただき、迅速に反映しています。1,000ダウンロード以上を達成し、英語学習者を中心に広く利用されています。\n\n今後もユーザーフィードバックを活かしながら、学習をより楽しく継続しやすくするソフトウェアを開発していきたいと考えています。",
+    techStack: ["Python", "PyQt", "CSS"],
+    downloadUrl: "https://ankiweb.net/shared/info/20342773",
+    githubUrl: "https://github.com/omuomuMG/Anki-Farm-Tycoon",
+    statistics: "Downloads: 1,000+",
+  },
+  {
+    id: 2,
+    title: "Prononciation Symbol Generator",
+    contentInfo: "発音記号を生成するソフトウェア",
+    imageUrl:
+      "https://github.com/user-attachments/assets/515717dc-bd37-4d88-af7f-788386b3cb45",
+    description:
+      "「Anki-Farm-Tycoon」は、世界中で人気のフラッシュカードアプリAnkiの拡張機能として個人開発したプロダクトです。語学学習を続ける上でAnkiは非常に効率的なツールですが、学習が単調で退屈になりやすく、継続が難しいという課題がありました。そこで「学習そのものを楽しくし、継続性を高めたい」と考え、ゲーム要素（ゲーミフィケーション）を取り入れた拡張機能として開発しました。\n\nAnki-Farm-Tycoonでは、フラッシュカードに正解するたびに農場の動物が成長したり、生産物が増えたり、資産を増やして「億万長者」を目指すという要素を盛り込んでいます。学習の進捗が可視化されることで、ユーザーのモチベーション維持にもつながっています。\n\n使用技術は、PythonとPyQtです。設計のポイントはオブジェクト指向を徹底し、動物や農場、生産物といった要素をクラスで抽象化しました。これにより、今後の機能追加やユーザー要望への対応が容易になっています。また、UIはPyQtで直感的で楽しいユーザー体験を意識して作っています。\n\nリリース後は世界中のユーザーからGitHub Issueやダウンロードページ経由で多くの意見や要望をいただき、迅速に反映しています。1,000ダウンロード以上を達成し、英語学習者を中心に広く利用されています。\n\n今後もユーザーフィードバックを活かしながら、学習をより楽しく継続しやすくするソフトウェアを開発していきたいと考えています。",
+    techStack: ["Python", "PyQt", "CSS"],
+    downloadUrl: "https://ankiweb.net/shared/info/20342773",
+    githubUrl: "https://github.com/omuomuMG/Anki-Farm-Tycoon",
   },
 ];
 
@@ -32,24 +58,31 @@ const Content: React.FC = () => {
 
   return (
     <div className={styles.ContentWrapper}>
-      <h1>Content</h1>
-      {contents.map((content) => (
-        <div
-          key={content.id}
-          className={styles.ContentCard}
-          onClick={() => handleContentClick(content)}
-          style={{ cursor: "pointer" }}
-        >
-          <img src={content.imageUrl} alt={content.title} />
-          <h2>{content.title}</h2>
-          <p>{content.description}</p>
-        </div>
-      ))}
+      <h1>My Projects</h1>
+      <div className={styles.contentGrid}>
+        {contents.map((content) => (
+          <div
+            key={content.id}
+            className={styles.ContentCard}
+            onClick={() => handleContentClick(content)}
+            style={{ cursor: "pointer" }}
+          >
+            <img src={content.imageUrl} alt={content.title} />
+            <h2>{content.title}</h2>
+            <p>{content.contentInfo}</p>
+          </div>
+        ))}
+      </div>
       {selectedContent && (
         <Modal
           showFlag={true}
           setShowModal={closeModal}
-          content={selectedContent.description}
+          contentInfo={selectedContent.contentInfo}
+          description={selectedContent.description}
+          icons={[FaPython, SiQt]}
+          statistics={selectedContent.statistics}
+          downloadUrl={selectedContent.downloadUrl}
+          githubUrl={selectedContent.githubUrl}
         />
       )}
     </div>
