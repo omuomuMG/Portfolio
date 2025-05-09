@@ -11,7 +11,7 @@ interface ContentItem {
   imageUrl: string;
   description: string;
   techStack: string[];
-  downloadUrl: string;
+  downloadUrl?: string;
   githubUrl: string;
   statistics?: string;
   icons?: React.ReactNode[];
@@ -41,6 +41,44 @@ const contents: ContentItem[] = [
     techStack: ["Python", "PyQt", "CSS"],
     downloadUrl: "https://ankiweb.net/shared/info/2075109613?cb=1735716386693",
     githubUrl: "https://github.com/omuomuMG/Pronounce-Symbol-Generator",
+    statistics: "Downloads: 100+",
+  },
+  {
+    id: 3,
+    title: "Greatest Translator",
+    contentInfo: "Comming Soon",
+    imageUrl:
+      "https://github.com/user-attachments/assets/515717dc-bd37-4d88-af7f-788386b3cb45",
+    description:
+      "Ankiのアドオンの英単語の発音記号を自動的に出力するツールです。具体的には、入力された英単語に対して、オープンソースのCMU発音辞書を利用して発音情報を取得し、それを国際音声記号（IPA）に変換して表示します。これにより、ユーザーは英単語とその正確な発音記号を同時に学習でき、より効率的に語彙力を高めることができます。\nAnkiは言語学習者の間で非常に人気のあるアプリですが、発音記号を簡単に確認できる拡張機能はこれまで存在していませんでした。そこで私は、世界中の英語学習者の役に立ちたいという思いからこのプロジェクトを立ち上げました。\n現在、この拡張機能は100件以上ダウンロードされており、多くの学習者に利用されています。ユーザーから寄せられたフィードバックを積極的に取り入れ、継続的に改善を行っている点も、このプロジェクトの強みのひとつです。",
+    techStack: ["Python", "PyQt", "CSS"],
+    downloadUrl: "https://ankiweb.net/shared/info/2075109613?cb=1735716386693",
+    githubUrl: "https://github.com/omuomuMG/Pronounce-Symbol-Generator",
+    statistics: "Downloads: 100+",
+  },
+  {
+    id: 4,
+    title: "Apotify",
+    contentInfo: "Comming Soon",
+    imageUrl:
+      "https://github.com/user-attachments/assets/515717dc-bd37-4d88-af7f-788386b3cb45",
+    description:
+      "Ankiのアドオンの英単語の発音記号を自動的に出力するツールです。具体的には、入力された英単語に対して、オープンソースのCMU発音辞書を利用して発音情報を取得し、それを国際音声記号（IPA）に変換して表示します。これにより、ユーザーは英単語とその正確な発音記号を同時に学習でき、より効率的に語彙力を高めることができます。\nAnkiは言語学習者の間で非常に人気のあるアプリですが、発音記号を簡単に確認できる拡張機能はこれまで存在していませんでした。そこで私は、世界中の英語学習者の役に立ちたいという思いからこのプロジェクトを立ち上げました。\n現在、この拡張機能は100件以上ダウンロードされており、多くの学習者に利用されています。ユーザーから寄せられたフィードバックを積極的に取り入れ、継続的に改善を行っている点も、このプロジェクトの強みのひとつです。",
+    techStack: ["Python", "PyQt", "CSS"],
+    downloadUrl: "https://ankiweb.net/shared/info/2075109613?cb=1735716386693",
+    githubUrl: "https://github.com/omuomuMG/Pronounce-Symbol-Generator",
+    statistics: "Downloads: 100+",
+  },
+  {
+    id: 5,
+    title: "Senryu",
+    contentInfo: "今日の思いを川柳に込めて",
+    imageUrl:
+      "https://private-user-images.githubusercontent.com/87554257/418465320-bd7202d0-399d-400e-8a80-039eb8b33791.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDY3ODU3ODgsIm5iZiI6MTc0Njc4NTQ4OCwicGF0aCI6Ii84NzU1NDI1Ny80MTg0NjUzMjAtYmQ3MjAyZDAtMzk5ZC00MDBlLThhODAtMDM5ZWI4YjMzNzkxLmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA1MDklMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNTA5VDEwMTEyOFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTAzZjdhOGEzNWE2YjQyNTM0MTJhMGRlODFmY2EwNTA3MDRkYjc5YWU1NDQ3ZjcxZmNmMTc0Yjc3OTVkOGRlY2QmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Csq7PJs3LyCzG7P8NW3vw0CBJTXsZHt7MP__muVbUNU",
+    description:
+      "Ankiのアドオンの英単語の発音記号を自動的に出力するツールです。具体的には、入力された英単語に対して、オープンソースのCMU発音辞書を利用して発音情報を取得し、それを国際音声記号（IPA）に変換して表示します。これにより、ユーザーは英単語とその正確な発音記号を同時に学習でき、より効率的に語彙力を高めることができます。\nAnkiは言語学習者の間で非常に人気のあるアプリですが、発音記号を簡単に確認できる拡張機能はこれまで存在していませんでした。そこで私は、世界中の英語学習者の役に立ちたいという思いからこのプロジェクトを立ち上げました。\n現在、この拡張機能は100件以上ダウンロードされており、多くの学習者に利用されています。ユーザーから寄せられたフィードバックを積極的に取り入れ、継続的に改善を行っている点も、このプロジェクトの強みのひとつです。",
+    techStack: ["Python", "PyQt", "CSS"],
+    githubUrl: "https://github.com/omuomuMG/Senryu",
     statistics: "Downloads: 100+",
   },
 ];
