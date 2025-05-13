@@ -58,10 +58,21 @@ const Globe: React.FC = () => {
   );
 
   return (
-    <mesh ref={globeRef}>
-      <sphereGeometry args={[EARTH_RADIUS, 64, 64]} />
-      <meshStandardMaterial map={texture} />
-    </mesh>
+    <>
+      <mesh ref={globeRef}>
+        <sphereGeometry args={[EARTH_RADIUS, 64, 64]} />
+        <meshStandardMaterial map={texture} />
+      </mesh>
+      <mesh>
+        <sphereGeometry args={[EARTH_RADIUS + 0.1, 64, 64]} />
+        <meshBasicMaterial
+          color="#87ceeb"
+          transparent
+          opacity={0.2}
+          side={THREE.BackSide}
+        />
+      </mesh>
+    </>
   );
 };
 
@@ -263,9 +274,21 @@ const FlightPath: React.FC<{
     .multiplyScalar(EARTH_RADIUS + EXTRA_HEIGHT);
   const goingCurve = new THREE.QuadraticBezierCurve3(start, midPoint, end);
   const goingPoints = goingCurve.getPoints(50);
+  const colors = goingPoints.map((_, i, arr) =>
+    new THREE.Color().lerpColors(
+      new THREE.Color("#fff176"),
+      new THREE.Color("#f44336"),
+      i / (arr.length - 1)
+    )
+  );
   return (
     <>
-      <Line points={goingPoints} color="yellow" lineWidth={2} />
+      <Line
+        points={goingPoints}
+        color="yellow"
+        lineWidth={2}
+        vertexColors={colors}
+      />
     </>
   );
 };
