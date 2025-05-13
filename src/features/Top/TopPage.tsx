@@ -1,12 +1,21 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Glob from "./Top";
 import styles from "./TopPage.module.css";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 const TopPage: React.FC = () => {
+  const [init, setInit] = useState(false);
+
   useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+
     const handleWheel = (event: WheelEvent) => {
       const scrollTo = window.innerHeight;
-      const threshold = scrollTo / 2; // スクロール判定のしきい値
 
       // 下へのスクロール
       if (window.scrollY === 0 && event.deltaY > 0) {
@@ -59,6 +68,97 @@ const TopPage: React.FC = () => {
 
   return (
     <div className={styles.TopPageWapper}>
+      {init && (
+        <Particles
+          id="tsparticles"
+          className={styles.Particles}
+          options={{
+            autoPlay: true,
+            fullScreen: {
+              enable: true,
+              zIndex: 0,
+            },
+            background: {
+              color: {
+                value: "transparent",
+              },
+            },
+            detectRetina: true,
+            fpsLimit: 120,
+            interactivity: {
+              detectsOn: "window",
+              events: {
+                onClick: {
+                  enable: true,
+                  mode: "repulse",
+                },
+                onHover: {
+                  enable: true,
+                  mode: "bubble",
+                },
+              },
+              modes: {
+                bubble: {
+                  distance: 250,
+                  duration: 2,
+                  opacity: 0,
+                  size: 0,
+                },
+                repulse: {
+                  distance: 400,
+                  duration: 0.4,
+                },
+              },
+            },
+            particles: {
+              color: {
+                value: "#ffffff",
+              },
+              links: {
+                color: "#ffffff",
+                distance: 100,
+                enable: false,
+                opacity: 1,
+                width: 1,
+              },
+              move: {
+                direction: "none",
+                enable: true,
+                outModes: {
+                  default: "out",
+                },
+                random: false,
+                speed: { min: 0.1, max: 1 },
+                straight: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  width: 1920,
+                  height: 1080,
+                },
+                value: 160,
+              },
+              opacity: {
+                value: { min: 0.1, max: 1 },
+                animation: {
+                  enable: true,
+                  speed: 1,
+                  startValue: "random",
+                },
+              },
+              shape: {
+                type: "circle",
+              },
+              size: {
+                value: { min: 1, max: 3 },
+              },
+            },
+            pauseOnBlur: true,
+            pauseOnOutsideViewport: true,
+          }}
+        />
+      )}
       <div className={styles.GlobWapper}>
         <Glob />
       </div>

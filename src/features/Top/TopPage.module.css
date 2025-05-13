@@ -1,8 +1,9 @@
 .TopPageWapper {
-  background: linear-gradient(180deg, black 0%, black 50%, #4b0082 100%);
   display: flex;
   height: 100vh;
   scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
 }
 .WelcomeMessageWapper {
   font-size: 2rem;
@@ -14,5 +15,13 @@
 
 .GlobWapper {
   width: 100%;
-  /* background-color: black; */
+}
+.Particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(180deg, black 0%, black 50%, #4b0082 100%);
 }
