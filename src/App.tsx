@@ -2,7 +2,6 @@ import "./App.css";
 import TopPage from "./features/Top/TopPage";
 import Content from "./features/Content/Content";
 import Profile from "./features/Profile/Profile";
-import Contact from "./features/Contact/Contact";
 import TestForm from "./features/Contact/Contact";
 
 function App() {
