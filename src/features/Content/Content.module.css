@@ -21,6 +21,9 @@
   gap: 2rem;
   width: 100%;
   max-width: 100%;
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr; /* 画面幅が500px未満の場合は1列に */
+  }
 }
 
 .ContentCard {
