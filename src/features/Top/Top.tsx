@@ -53,8 +53,11 @@ const convertLatLonToVector3 = (lat: number, lon: number, radius: number) => {
 // 地球儀コンポーネント
 const Globe: React.FC = () => {
   const globeRef = React.useRef<THREE.Mesh>(null!);
+  // const texture = new THREE.TextureLoader().load(
+  //   "https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg"
+  // );
   const texture = new THREE.TextureLoader().load(
-    "https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg"
+    process.env.PUBLIC_URL + "/earth_material.png"
   );
 
   return (
@@ -347,7 +350,7 @@ const Scene: React.FC = () => {
 const App: React.FC = () => {
   return (
     <div className={styles.wrapper}>
-      <Canvas camera={{ position: [0, 0, 15], fov: 50 }}>
+      <Canvas camera={{ position: [0, 0, 13], fov: 50 }}>
         <AnimatedCamera />
         <Scene />
       </Canvas>
