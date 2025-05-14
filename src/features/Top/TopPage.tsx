@@ -3,6 +3,7 @@ import Glob from "./Top";
 import styles from "./TopPage.module.css";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
+import { Typewriter } from "react-simple-typewriter";
 
 const TopPage: React.FC = () => {
   const [init, setInit] = useState(false);
@@ -163,10 +164,60 @@ const TopPage: React.FC = () => {
         <Glob />
       </div>
       <div className={styles.WelcomeMessageWapper}>
-        <h1>This is omuomuMG !</h1>
-        <h1>こんにちは！</h1>
-        <h1>你好！</h1>
-        <h1>Hi! There!</h1>
+        <h1>
+          <Typewriter
+            words={["This is omuomuMG"]}
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </h1>
+        <h1>
+          <Typewriter
+            words={["こんにちは！"]}
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </h1>
+        <h1>
+          <Typewriter
+            words={["Hi! There!"]}
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </h1>
+        <h1>
+          <Typewriter
+            words={["你好！"]}
+            cursor
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </h1>
+        <p>
+          <Typewriter
+            words={[
+              "Outlier.aiでソフトウェアエンジニアをしています",
+              "学校法人角川学園 N Code Laboでプログラミングを教えています",
+              "英語と中国語を勉強しています。",
+              "Ankiのソフトウェアを開発しています。",
+              "1ヶ月に一回、海外に行きます",
+              "",
+            ]}
+            loop={0}
+            cursor
+            cursorStyle="_"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </p>
       </div>
     </div>
   );
