@@ -5,7 +5,7 @@
   position: relative;
   overflow: hidden;
 
-  @media (max-width: 1500px) {
+  @media (max-width: 1300px) {
     align-items: center;
     justify-content: center;
   }
@@ -18,7 +18,7 @@
   font-weight: 900;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 
-  @media (max-width: 1500px) {
+  @media (max-width: 1300px) {
     font-size: 3vw;
     padding: 15px;
     margin: 0 auto;
@@ -30,7 +30,7 @@
 
 .GlobWapper {
   width: 50%;
-  @media (max-width: 1500px) {
+  @media (max-width: 1300px) {
     width: 100%;
   }
 }
