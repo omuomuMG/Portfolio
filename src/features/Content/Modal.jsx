@@ -11,7 +11,7 @@ const Modal = (props) => {
       {props.showFlag ? (
         <div className={styles.overlay}>
           <div className={styles.modalContent}>
-            <h1 className={styles.title}>Anki Farm Tycoon</h1>
+            <h1 className={styles.title}>{props.title}</h1>
             <h2 className={styles.sectionTitle}>説明</h2>
             <p className={styles.description}>{props.description}</p>
             <h2 className={styles.sectionTitle}>使用技術</h2>

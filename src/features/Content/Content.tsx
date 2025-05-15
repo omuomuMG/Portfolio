@@ -109,6 +109,7 @@ const Content: React.FC = () => {
           statistics={selectedContent.statistics}
           downloadUrl={selectedContent.downloadUrl}
           githubUrl={selectedContent.githubUrl}
+          title={selectedContent.title}
         />
       )}
     </div>
