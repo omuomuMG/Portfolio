@@ -43,3 +43,36 @@
   z-index: -1;
   background: linear-gradient(180deg, black 0%, black 50%, #4b0082 100%);
 }
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: linear-gradient(180deg, black 0%, black 50%, #4b0082 100%);
+
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingImage {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 20%;
+  height: 20;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loadingImage {
+    animation: loadingImage-spin infinite 20s linear;
+  }
+}
+@keyframes loadingImage-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

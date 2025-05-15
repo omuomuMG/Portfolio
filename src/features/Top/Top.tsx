@@ -51,14 +51,22 @@ const convertLatLonToVector3 = (lat: number, lon: number, radius: number) => {
 };
 
 // 地球儀コンポーネント
-const Globe: React.FC = () => {
+const Globe: React.FC<{ onLoaded?: () => void }> = ({ onLoaded }) => {
   const globeRef = React.useRef<THREE.Mesh>(null!);
-  // const texture = new THREE.TextureLoader().load(
-  //   "https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg"
-  // );
-  const texture = new THREE.TextureLoader().load(
-    process.env.PUBLIC_URL + "/earth_material.png"
+  const [loaded, setLoaded] = React.useState(false);
+
+  const texture = React.useMemo(
+    () =>
+      new THREE.TextureLoader().load(
+        process.env.PUBLIC_URL + "/earth_material.png",
+        () => setLoaded(true)
+      ),
+    []
   );
+
+  React.useEffect(() => {
+    if (loaded && onLoaded) onLoaded();
+  }, [loaded, onLoaded]);
 
   return (
     <>
@@ -84,7 +92,10 @@ const Airplane: React.FC<{
   start: THREE.Vector3;
   end: THREE.Vector3;
   roundTrip: boolean;
-}> = ({ start, end, roundTrip }) => {
+  onLoaded?: () => void;
+}> = ({ start, end, roundTrip, onLoaded }) => {
+  const [loaded, setLoaded] = React.useState(false);
+
   const mtl = useLoader(
     MTLLoader,
     process.env.PUBLIC_URL + "/models/11803_Airplane_v1_l1.mtl"
@@ -101,6 +112,14 @@ const Airplane: React.FC<{
       loader.setMaterials(mtl);
     }
   );
+
+  React.useEffect(() => {
+    setLoaded(true);
+  }, [airplane]);
+
+  React.useEffect(() => {
+    if (loaded && onLoaded) onLoaded();
+  }, [loaded, onLoaded]);
 
   // useLoader はキャッシュするため、各インスタンスでモデルを clone する
   const airplaneObject = React.useMemo(() => airplane.clone(), [airplane]);
@@ -297,7 +316,17 @@ const FlightPath: React.FC<{
 };
 
 // 各フライトルートに基づき、飛行機と軌道を生成
-const FlightRoutes: React.FC = () => {
+const FlightRoutes: React.FC<{ onLoaded?: () => void }> = ({ onLoaded }) => {
+  // すべてのAirplaneのロード完了を検知
+  const [loadedCount, setLoadedCount] = React.useState(0);
+  const total = FLIGHT_ROUTES.length;
+
+  React.useEffect(() => {
+    if (loadedCount >= total && onLoaded) {
+      onLoaded();
+    }
+  }, [loadedCount, total, onLoaded]);
+
   const flights = FLIGHT_ROUTES.map((route, index) => {
     const fromData = AIRPORT_COORDINATES[route.from];
     const toData = AIRPORT_COORDINATES[route.to];
@@ -311,7 +340,12 @@ const FlightRoutes: React.FC = () => {
     return (
       <React.Fragment key={index}>
         <FlightPath start={start} end={end} />
-        <Airplane start={start} end={end} roundTrip={route.roundTrip} />
+        <Airplane
+          start={start}
+          end={end}
+          roundTrip={route.roundTrip}
+          onLoaded={() => setLoadedCount((c) => c + 1)}
+        />
       </React.Fragment>
     );
   });
@@ -333,26 +367,36 @@ const AnimatedCamera: React.FC = () => {
 };
 
 // シーン全体の構成
-const Scene: React.FC = () => {
+const Scene: React.FC<{ onLoaded?: () => void }> = ({ onLoaded }) => {
+  // GlobeとFlightRoutesの両方のロード完了を待つ
+  const [globeLoaded, setGlobeLoaded] = React.useState(false);
+  const [flightsLoaded, setFlightsLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    if (globeLoaded && flightsLoaded && onLoaded) {
+      onLoaded();
+    }
+  }, [globeLoaded, flightsLoaded, onLoaded]);
+
   return (
     <>
       <ambientLight intensity={0.8} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
-      <Globe />
-      <FlightRoutes />
+      <Globe onLoaded={() => setGlobeLoaded(true)} />
+      <FlightRoutes onLoaded={() => setFlightsLoaded(true)} />
       <OrbitControls enableZoom={false} />
-      {/* <Stars /> */}
     </>
   );
 };
 
 // アプリケーションのメインコンポーネント
-const App: React.FC = () => {
+const App: React.FC<{ onLoaded?: () => void }> = ({ onLoaded }) => {
+  // Sceneのロード完了を親に伝える
   return (
     <div className={styles.wrapper}>
       <Canvas camera={{ position: [0, 0, 13], fov: 50 }}>
         <AnimatedCamera />
-        <Scene />
+        <Scene onLoaded={onLoaded} />
       </Canvas>
     </div>
   );

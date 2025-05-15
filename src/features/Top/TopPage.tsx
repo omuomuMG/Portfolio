@@ -7,6 +7,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const TopPage: React.FC = () => {
   const [init, setInit] = useState(false);
+  const [globLoaded, setGlobLoaded] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -69,6 +70,15 @@ const TopPage: React.FC = () => {
 
   return (
     <div className={styles.TopPageWapper}>
+      {(!globLoaded || !init) && (
+        <div className={styles.loading}>
+          {" "}
+          <img
+            src="https://avatars.githubusercontent.com/u/87554257?v=4"
+            className={styles.loadingImage}
+          />
+        </div>
+      )}
       {init && (
         <Particles
           id="tsparticles"
@@ -161,7 +171,7 @@ const TopPage: React.FC = () => {
         />
       )}
       <div className={styles.GlobWapper}>
-        <Glob />
+        <Glob onLoaded={() => setGlobLoaded(true)} />
       </div>
       <div className={styles.WelcomeMessageWapper}>
         <h1>
@@ -204,10 +214,10 @@ const TopPage: React.FC = () => {
           <Typewriter
             words={[
               "Outlier.aiでソフトウェアエンジニアをしています",
-              "学校法人角川学園 N Code Laboでプログラミングを教えています",
+              "学校法人角川学園 N Code Laboでプログラミング講師をしています",
               "英語と中国語を勉強しています。",
               "Ankiのソフトウェアを開発しています。",
-              "1ヶ月に一回、海外に行きます",
+              "1ヶ月に1回海外に行きます",
               "",
             ]}
             loop={0}
