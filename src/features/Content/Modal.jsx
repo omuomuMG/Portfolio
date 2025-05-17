@@ -25,10 +25,10 @@ const Modal = ({ showFlag, setShowModal, props }) => {
             <h2 className={styles.sectionTitle}>説明</h2>
             <p className={styles.description}>{props.productDescription}</p>
             <h2 className={styles.sectionTitle}>特徴</h2>
-            <p>{props.highlights}</p>
+            <p>{props.background}</p>
+            <h2 className={styles.sectionTitle}>使用技術</h2>
             <h2 className={styles.sectionTitle}>技術選定理由</h2>
             <p>{props.techReason}</p>
-            <h2 className={styles.sectionTitle}>使用技術</h2>
             <div className={styles.techStack}>
               {props.techStack &&
                 props.techStack.map((tech, index) => (
