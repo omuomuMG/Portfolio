@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./Modal.module.css";
 
+
 const Modal = ({ showFlag, setShowModal, props }) => {
   useEffect(() => {
     if (showFlag) {
@@ -27,16 +28,17 @@ const Modal = ({ showFlag, setShowModal, props }) => {
             <h2 className={styles.sectionTitle}>特徴</h2>
             <p>{props.background}</p>
             <h2 className={styles.sectionTitle}>使用技術</h2>
-            <h2 className={styles.sectionTitle}>技術選定理由</h2>
-            <p>{props.techReason}</p>
             <div className={styles.techStack}>
               {props.techStack &&
-                props.techStack.map((tech, index) => (
+                props.techStack.map((TechIcon, index) => (
                   <span key={index} className={styles.techItem}>
-                    {tech}
+                    <TechIcon className={styles.icon} />
                   </span>
                 ))}
             </div>
+            <h2 className={styles.sectionTitle}>技術選定理由</h2>
+            <p>{props.techReason}</p>
+
             <h2 className={styles.sectionTitle}>統計情報</h2>
             <p>{props.statistics}</p>
             <h2 className={styles.sectionTitle}>リンク</h2>

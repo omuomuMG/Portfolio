@@ -1,3 +1,8 @@
+import { IconType } from "react-icons";
+import { FaPython as python, FaCss3Alt as css, FaReact as react } from "react-icons/fa";
+import { SiQt as qt, SiNextdotjs as next, SiTypescript as typescript } from "react-icons/si";
+import { IoLogoFirebase as firebase } from "react-icons/io5";
+
 export interface ContentSummary {
     id: number;
     title?: string;
@@ -10,7 +15,7 @@ export interface ContentDetail extends ContentSummary {
     background?: string;
     techReason?: string;
     statistics?: string;
-    techStack?: string[];
+    techStack?: IconType[];
     downloadUrl?: string;
     githubUrl?: string;
     siteUrl?: string;
@@ -51,7 +56,7 @@ export const contentDetail: ContentDetail[] = [
         background: "語学学習を続ける上でAnkiは非常に効率的なツールですが、学習が単調で退屈になりやすく、継続が難しいという課題がありました。そこで「学習そのものを楽しくし、継続性を高めたい」と考え、ゲーム要素（ゲーミフィケーション）を取り入れた拡張機能として開発しました。\n\nAnki-Farm-Tycoonでは、フラッシュカードに正解するたびに農場の動物が成長したり、生産物・資産の増加など学習の進捗が可視化されることで、ユーザーのモチベーション維持にもつながっています。",
         techReason: "Ankiのアドオン開発において推薦されているPython, PyQtを用いて開発しました。",
         statistics: "1200+ ダウンロード",
-        techStack: ["Python", "PyQt", "CSS"],
+        techStack: [python, qt, css],
         downloadUrl: "https://ankiweb.net/shared/info/20342773",
         githubUrl: "https://github.com/omuomuMG/Anki-Farm-Tycoon",
     },
@@ -61,7 +66,7 @@ export const contentDetail: ContentDetail[] = [
         background: "Ankiは言語学習者の間で非常に人気のあるアプリですが、発音記号を簡単に確認できる拡張機能はこれまで存在していませんでした。そこで私は、世界中の英語学習者の役に立ちたいという思いからこのプロジェクトを立ち上げました。\n現在、このソフトウェアは170ダウンロード以上されており、多くの学習者に利用されています。ユーザーから寄せられたフィードバックを積極的に取り入れ、継続的な改善も続けています。",
         techReason: "技術の選定理由としては、Ankiのアドオン開発で推薦されているPython, PyQtを軸に実装をしました。プロジェクトはオフライン利用可能かつオープンソースで公開したいという思いがあったため、条件に合ったCMU Pronouncing Dictionaryを使用しました。",
         statistics: "170+ ダウンロード",
-        techStack: ["Python", "PyQt", "CSS"],
+        techStack: [python, qt, css],
         downloadUrl: "https://ankiweb.net/shared/info/2075109613?cb=1735716386693",
         githubUrl: "https://github.com/omuomuMG/Pronounce-Symbol-Generator",
     },
@@ -71,7 +76,7 @@ export const contentDetail: ContentDetail[] = [
         background: "私は未知の単語に遭遇した際、いちいちネット検索することにストレスを感じていました。フラッシュカードへの単語登録と意味の検索を同時に行えれば学習効率が上がると考え、この開発に着手しました。",
         techReason: "使用技術はPythonとPyQtで、シンプルなUIを提供しています。サードパーティライブラリとしては、DeepLライブラリ、google-api-python-clientライブラリ、dateutilを使用しています。Ankiでは、サードパーティのライブラリのサポートがないです。そのため最低限のライブラリを使い、ライブラリと共に配布しています。",
         statistics: "Comming Soon",
-        techStack: ["Python", "PyQt", "CSS"],
+        techStack: [python, qt, css],
         downloadUrl: "https://ankiweb.net/shared/info/259448931",
         githubUrl: "https://github.com/omuomuMG/DeepL-and-Google-Translator",
     },
@@ -81,7 +86,7 @@ export const contentDetail: ContentDetail[] = [
         background: "Webアプリの学習のアウトプットのために作成しました。",
         techReason: "モダンなWeb開発のためNext.js, React, TypeScriptを採用しました。ログインやデータベースをまとめて管理するためにFirebseを採用しました。",
         statistics: "",
-        techStack: ["Next.js", "React", "TypeScript", "Firebase"],
+        techStack: [react, next, typescript, firebase],
         githubUrl: "https://github.com/omuomuMG/Senryu",
         siteUrl: "https://senryu-bice.vercel.app/"
     },
