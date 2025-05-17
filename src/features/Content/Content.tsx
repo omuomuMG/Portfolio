@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./Content.module.css";
 import Modal from "./Modal";
-import { FaPython } from "react-icons/fa";
-import { SiQt } from "react-icons/si";
 import { contentDetail, contentSummary } from "./contents"
 import type { ContentSummary } from "./contents";
 
