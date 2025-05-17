@@ -8,6 +8,7 @@ function App() {
   return (
     <div className="App">
       <div>
+        <title>omuomuMG</title>
         <TopPage />
         <Content />
         <Profile />
