@@ -175,42 +175,28 @@ const TopPage: React.FC = () => {
       </div>
       {init && globLoaded && (
         <div className={styles.WelcomeMessageWapper}>
-          <h1>
+          {/* <h1>
+            <Typewriter words={["This is omuomuMG"]} typeSpeed={70} />
+          </h1> */}
+          <h1>This is omuomuMG</h1>
+          <h2>
             <Typewriter
-              words={["This is omuomuMG"]}
+              words={["欢迎访问我的网站!"]}
+              cursor
+              cursorStyle="_"
               typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
             />
-          </h1>
-          <h1>
+          </h2>
+          <h2>
+            <Typewriter words={["Hi! There!"]} cursorStyle="_" typeSpeed={70} />
+          </h2>
+          <h2>
             <Typewriter
               words={["こんにちは！"]}
               cursorStyle="_"
               typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
             />
-          </h1>
-          <h1>
-            <Typewriter
-              words={["Hi! There!"]}
-              cursorStyle="_"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
-          </h1>
-          <h1>
-            <Typewriter
-              words={["你好！"]}
-              cursor
-              cursorStyle="_"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
-          </h1>
+          </h2>
           <p>
             <Typewriter
               words={[
