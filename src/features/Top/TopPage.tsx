@@ -182,7 +182,6 @@ const TopPage: React.FC = () => {
           <h2>
             <Typewriter
               words={["欢迎访问我的网站!"]}
-              cursor
               cursorStyle="_"
               typeSpeed={70}
             />
@@ -193,6 +192,7 @@ const TopPage: React.FC = () => {
           <h2>
             <Typewriter
               words={["こんにちは！"]}
+              cursor
               cursorStyle="_"
               typeSpeed={70}
             />
