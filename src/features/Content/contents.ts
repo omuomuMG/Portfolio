@@ -15,7 +15,7 @@ export interface ContentSummary {
   id: number;
   title?: string;
   contentInfo?: string;
-  imageUrl?: string;
+  logo?: string;
 }
 
 export interface ContentDetail extends ContentSummary {
@@ -33,31 +33,28 @@ export interface ContentDetail extends ContentSummary {
 export const contentSummary: ContentSummary[] = [
   {
     id: 1,
+
     title: "Anki Farm Tycoon",
     contentInfo: "学習をゲーム化するソフトウェア",
-    imageUrl:
-      "https://github.com/user-attachments/assets/479565f4-5544-4d39-990b-680020d5b24e",
+    logo: "/projects/AnkiFarmTycoon/AnkiFarmTycoonLogo.png",
   },
   {
     id: 2,
     title: "Prononciation Symbol Generator",
     contentInfo: "発音記号を生成するソフトウェア",
-    imageUrl:
-      "https://github.com/user-attachments/assets/515717dc-bd37-4d88-af7f-788386b3cb45",
+    logo: "/projects/PSG/PSGLogo.png",
   },
   {
     id: 3,
     title: "DeepL and Google Translator",
     contentInfo: "ワンクリックで164種の言語に翻訳",
-    imageUrl:
-      "https://github.com/user-attachments/assets/d97d4cfa-682f-4bf7-9884-f68bb311affa",
+    logo: "/projects/DandGTranslator/DandGTranslatorLogo.png",
   },
   {
     id: 4,
     title: "Senryu",
     contentInfo: "今日の思いを川柳に込めて",
-    imageUrl:
-      "https://github.com/user-attachments/assets/ed67393c-5d2e-4c74-927a-8bd95c4e853d",
+    logo: "/projects/Senryu/SenryuLogo.png",
   },
 ];
 

@@ -1,9 +1,8 @@
 import React from "react";
 import styles from "./Content.module.css";
 import Modal from "./Modal";
-import { contentDetail, contentSummary } from "./contents"
+import { contentDetail, contentSummary } from "./contents";
 import type { ContentSummary } from "./contents";
-
 
 const Content: React.FC = () => {
   const [selectedContent, setSelectedContent] =
@@ -31,7 +30,12 @@ const Content: React.FC = () => {
             onClick={() => handleContentClick(content)}
             style={{ cursor: "pointer" }}
           >
-            <img src={content.imageUrl} alt={content.title} />
+            <img
+              src={
+                content.logo ? `${process.env.PUBLIC_URL}${content.logo}` : ""
+              }
+              alt={content.title}
+            />
             <h2>{content.title}</h2>
             <p>{content.contentInfo}</p>
           </div>
