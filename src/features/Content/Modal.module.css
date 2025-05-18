@@ -127,3 +127,17 @@
   transform: translateY(-3px) scale(1.045);
   border-color: #7e00d8;
 }
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.spin {
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

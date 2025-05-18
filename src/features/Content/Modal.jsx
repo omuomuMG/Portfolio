@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Modal.module.css";
+import Lottie from "react-lottie";
 import { IoMdDownload, IoLogoGithub } from "react-icons/io";
 import { TbWorldWww } from "react-icons/tb";
-import Lottie from "react-lottie";
+import { FaSpinner } from "react-icons/fa";
 
 const Modal = ({ showFlag, setShowModal, props }) => {
   const [animationData, setAnimationData] = useState(null);
@@ -40,7 +41,13 @@ const Modal = ({ showFlag, setShowModal, props }) => {
         <div className={styles.overlay}>
           <div className={styles.modalContent}>
             <div className={styles.demo}>
-              <Lottie options={defaultOptions} />
+              {animationData ? (
+                <Lottie options={defaultOptions} />
+              ) : (
+                <div className={styles.spinner}>
+                  <FaSpinner className={styles.spin} size={48} />
+                </div>
+              )}
             </div>
             <h2 className={styles.sectionTitle}>説明</h2>
             <p className={styles.description}>{props.productDescription}</p>
