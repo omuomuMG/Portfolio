@@ -173,62 +173,64 @@ const TopPage: React.FC = () => {
       <div className={styles.GlobWapper}>
         <Glob onLoaded={() => setGlobLoaded(true)} />
       </div>
-      <div className={styles.WelcomeMessageWapper}>
-        <h1>
-          <Typewriter
-            words={["This is omuomuMG"]}
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          />
-        </h1>
-        <h1>
-          <Typewriter
-            words={["こんにちは！"]}
-            cursorStyle="_"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          />
-        </h1>
-        <h1>
-          <Typewriter
-            words={["Hi! There!"]}
-            cursorStyle="_"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          />
-        </h1>
-        <h1>
-          <Typewriter
-            words={["你好！"]}
-            cursor
-            cursorStyle="_"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          />
-        </h1>
-        <p>
-          <Typewriter
-            words={[
-              "Outlier.aiでソフトウェアエンジニアをしています",
-              "学校法人角川学園 N Code Laboでプログラミング講師をしています",
-              "英語と中国語を勉強しています。",
-              "Ankiのソフトウェアを開発しています。",
-              "1ヶ月に1回海外に行きます",
-              "",
-            ]}
-            loop={0}
-            cursor
-            cursorStyle="_"
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-          />
-        </p>
-      </div>
+      {init && globLoaded && (
+        <div className={styles.WelcomeMessageWapper}>
+          <h1>
+            <Typewriter
+              words={["This is omuomuMG"]}
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </h1>
+          <h1>
+            <Typewriter
+              words={["こんにちは！"]}
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </h1>
+          <h1>
+            <Typewriter
+              words={["Hi! There!"]}
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </h1>
+          <h1>
+            <Typewriter
+              words={["你好！"]}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </h1>
+          <p>
+            <Typewriter
+              words={[
+                "Outlier.aiでソフトウェアエンジニアをしています",
+                "学校法人角川学園 N Code Laboでプログラミング講師をしています",
+                "英語と中国語を勉強しています。",
+                "Ankiのソフトウェアを開発しています。",
+                "1ヶ月に1回海外に行きます",
+                "",
+              ]}
+              loop={0}
+              cursor
+              cursorStyle="_"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+            />
+          </p>
+        </div>
+      )}
     </div>
   );
 };
