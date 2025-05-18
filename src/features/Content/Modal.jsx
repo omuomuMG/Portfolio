@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Modal.module.css";
 import { IoMdDownload, IoLogoGithub } from "react-icons/io";
 import { TbWorldWww } from "react-icons/tb";
+import Lottie from "react-lottie";
 
 const Modal = ({ showFlag, setShowModal, props }) => {
+  const [animationData, setAnimationData] = useState(null);
+
   useEffect(() => {
     if (showFlag) {
       document.body.style.overflow = "hidden";
@@ -19,16 +22,26 @@ const Modal = ({ showFlag, setShowModal, props }) => {
     setShowModal(null);
   };
 
+  useEffect(() => {
+    fetch(process.env.PUBLIC_URL + props.demo)
+      .then((res) => res.json())
+      .then(setAnimationData);
+  }, []);
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+  };
+
   return (
     <>
       {showFlag ? (
         <div className={styles.overlay}>
           <div className={styles.modalContent}>
-            <img
-              className={styles.demo}
-              src={props.demo ? `${process.env.PUBLIC_URL}${props.demo}` : ""}
-              alt={props.demo}
-            />
+            <div className={styles.demo}>
+              <Lottie options={defaultOptions} />
+            </div>
             <h2 className={styles.sectionTitle}>説明</h2>
             <p className={styles.description}>{props.productDescription}</p>
             <h2 className={styles.sectionTitle}>開発背景</h2>

@@ -33,7 +33,6 @@ export interface ContentDetail extends ContentSummary {
 export const contentSummary: ContentSummary[] = [
   {
     id: 1,
-
     title: "Anki Farm Tycoon",
     contentInfo: "学習をゲーム化するソフトウェア",
     logo: "/projects/AnkiFarmTycoon/AnkiFarmTycoonLogo.png",
@@ -61,7 +60,7 @@ export const contentSummary: ContentSummary[] = [
 export const contentDetail: ContentDetail[] = [
   {
     id: 1,
-    demo: "/projects/AnkiFarmTycoon/AnkiFarmTycoonDemo.gif",
+    demo: "/projects/AnkiFarmTycoon/AnkiFarmTycoonDemo.json",
     productDescription:
       "「Anki Farm Tycoon」は、世界中で人気のフラッシュカードアプリAnkiの拡張機能として個人開発したゲームです。ユーザーは小さな牧場の経営者となり、億万長者を目指します。フラッシュカードに回答することで動物を育て、その動物たちから得られるミルクや卵、さらに出荷による収入で資金を蓄えていきます。その資金で従業員を雇い、土地を広げながら、大きな牧場へと成長させていきましょう！！！！リリース後は、GitHubやダウンロードページを通じて世界中のユーザーから多くのフィードバックをいただき、それらを迅速に反映してきました。現在では1,000ダウンロードを超え、特に英語学習者を中心に広く活用されています。今後もユーザーの声を大切にしながら、より楽しく学習を継続できるソフトウェアの開発に取り組んでいきます。",
     background:
@@ -75,7 +74,7 @@ export const contentDetail: ContentDetail[] = [
   },
   {
     id: 2,
-    demo: "/projects/PSG/PSGDemo.gif",
+    demo: "/projects/PSG/PSGDemo.json",
     productDescription:
       "Ankiのアドオンの英単語の発音記号を自動的に出力するツールです。具体的には、入力された英単語に対して、オープンソースのCMU発音辞書を利用して発音情報を取得し、それを国際音声記号（IPA）に変換して表示します。これにより、ユーザーは英単語とその正確な発音記号を同時に学習でき、より効率的に語彙力を高めることができます。",
     background:
@@ -89,7 +88,7 @@ export const contentDetail: ContentDetail[] = [
   },
   {
     id: 3,
-    demo: "/projects/DandGTranslator/DandGTranslatorDemo.gif",
+    demo: "/projects/DandGTranslator/DandGTranslatorDemo.json",
     productDescription:
       "翻訳をワンクリックで行うことができるAnkiのアドオンです。DeepLとGoogle翻訳のAPIを利用して、選択したテキストを即座に翻訳します。また、このアプリのAPI使用量も記録することができます。これにより、学習中の単語やフレーズをすぐに理解でき、効率的な学習が可能になります。また、ユーザはAPIの使用量を確認しながらソフトウェアを使えるので、ユーザはストレスを感じることなくができます。このアドオンは特に語学学習者にとって便利で、Ankiのフラッシュカードを使用している際に、わからない単語やフレーズが出てきた場合にすぐに翻訳結果を得ることができます。これにより、学習の流れを中断することなく、スムーズに進めることができます。",
     background:
@@ -102,7 +101,7 @@ export const contentDetail: ContentDetail[] = [
   },
   {
     id: 4,
-    demo: "/projects/Senryu/SenryuDemo.gif",
+    demo: "/projects/Senryu/SenryuDemo.json",
     productDescription:
       "今日の思いを川柳に込めて投稿できるWebアプリです。ユーザーは日々の出来事や感じたことを川柳として投稿し、記録できます。Next.jsとReact、TypeScriptを用いて開発されており、直感的なUIとリアルタイムな投稿機能が特徴です。",
     background: "Webアプリの学習のアウトプットのために作成しました。",
