@@ -4,6 +4,7 @@ import Lottie from "react-lottie";
 import { IoMdDownload, IoLogoGithub } from "react-icons/io";
 import { TbWorldWww } from "react-icons/tb";
 import { FaSpinner } from "react-icons/fa";
+import { SiQiita } from "react-icons/si";
 
 const Modal = ({ showFlag, setShowModal, props }) => {
   const [animationData, setAnimationData] = useState(null);
@@ -107,6 +108,19 @@ const Modal = ({ showFlag, setShowModal, props }) => {
                 >
                   <TbWorldWww />
                   サイト
+                </a>
+              </p>
+            )}
+            {props.qiitaUrl && (
+              <p>
+                <a
+                  href={props.qiitaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.link}
+                >
+                  <SiQiita />
+                  紹介記事
                 </a>
               </p>
             )}
