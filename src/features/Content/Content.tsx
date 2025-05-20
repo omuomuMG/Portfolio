@@ -38,6 +38,19 @@ const Content: React.FC = () => {
             />
             <h2>{content.title}</h2>
             <p>{content.contentInfo}</p>
+            <div className={styles.techStack}>
+              {content.techStack &&
+                content.techStack.map((TechIcon, index) => (
+                  <span key={index} className={styles.techItem}>
+                    {React.createElement(
+                      TechIcon as React.FC<{ className?: string }>,
+                      {
+                        className: styles.icon,
+                      }
+                    )}
+                  </span>
+                ))}
+            </div>
           </div>
         ))}
       </div>

@@ -16,6 +16,7 @@ export interface ContentSummary {
   title?: string;
   contentInfo?: string;
   logo?: string;
+  techStack?: IconType[];
 }
 
 export interface ContentDetail extends ContentSummary {
@@ -24,10 +25,10 @@ export interface ContentDetail extends ContentSummary {
   background?: string;
   techReason?: string;
   statistics?: string;
-  techStack?: IconType[];
   downloadUrl?: string;
   githubUrl?: string;
   siteUrl?: string;
+  qiitaUrl?: string;
 }
 
 export const contentSummary: ContentSummary[] = [
@@ -36,24 +37,28 @@ export const contentSummary: ContentSummary[] = [
     title: "Anki Farm Tycoon",
     contentInfo: "学習をゲーム化するソフトウェア",
     logo: "/projects/AnkiFarmTycoon/AnkiFarmTycoonLogo.png",
+    techStack: [python, qt, css],
   },
   {
     id: 2,
     title: "Prononciation Symbol Generator",
     contentInfo: "発音記号を生成するソフトウェア",
     logo: "/projects/PSG/PSGLogo.png",
+    techStack: [python, qt, css],
   },
   {
     id: 3,
     title: "DeepL and Google Translator",
     contentInfo: "ワンクリックで164種の言語に翻訳",
     logo: "/projects/DandGTranslator/DandGTranslatorLogo.png",
+    techStack: [python, qt, css],
   },
   {
     id: 4,
     title: "Senryu",
     contentInfo: "今日の思いを川柳に込めて",
     logo: "/projects/Senryu/SenryuLogo.png",
+    techStack: [react, next, typescript, firebase],
   },
 ];
 
@@ -71,6 +76,7 @@ export const contentDetail: ContentDetail[] = [
     techStack: [python, qt, css],
     downloadUrl: "https://ankiweb.net/shared/info/20342773",
     githubUrl: "https://github.com/omuomuMG/Anki-Farm-Tycoon",
+    qiitaUrl: "https://qiita.com/omuomuMG/items/abb77a32ef729cb33bd6",
   },
   {
     id: 2,
