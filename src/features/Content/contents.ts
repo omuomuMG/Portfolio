@@ -8,6 +8,7 @@ import {
   SiQt as qt,
   SiNextdotjs as next,
   SiTypescript as typescript,
+  SiSupabase as supabse
 } from "react-icons/si";
 import { IoLogoFirebase as firebase } from "react-icons/io5";
 
@@ -37,7 +38,7 @@ export const contentSummary: ContentSummary[] = [
     title: "Anki Farm Tycoon",
     contentInfo: "学習をゲーム化するソフトウェア",
     logo: "/projects/AnkiFarmTycoon/AnkiFarmTycoonLogo.png",
-    techStack: [python, qt, css],
+    techStack: [python, qt, supabse, css],
   },
   {
     id: 2,
@@ -71,9 +72,9 @@ export const contentDetail: ContentDetail[] = [
     background:
       "語学学習を続ける上でAnkiは非常に効率的なツールですが、学習が単調で退屈になりやすく、継続が難しいという課題がありました。そこで「学習そのものを楽しくし、継続性を高めたい」と考え、ゲーム要素（ゲーミフィケーション）を取り入れた拡張機能として開発しました。\n\nAnki-Farm-Tycoonでは、フラッシュカードに正解するたびに農場の動物が成長したり、生産物・資産の増加など学習の進捗が可視化されることで、ユーザーのモチベーション維持にもつながっています。",
     techReason:
-      "Ankiのアドオン開発において推薦されているPython, PyQtを用いて開発しました。",
+      "Ankiのアドオン開発において推薦されているPython, PyQtを用いて開発しました。データベースには、SQLベースでデータ管理をしたかったため、Supabaseを使用しました。 Ankiの性質上、環境変数が使えないため、Anonキーを公開しています。そしてデータベースポリシーを適切に設定することにより、ユーザデータを守っています。",
     statistics: "1200+ ダウンロード",
-    techStack: [python, qt, css],
+    techStack: [python, qt, supabse, css],
     downloadUrl: "https://ankiweb.net/shared/info/20342773",
     githubUrl: "https://github.com/omuomuMG/Anki-Farm-Tycoon",
     qiitaUrl: "https://qiita.com/omuomuMG/items/abb77a32ef729cb33bd6",
