@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+# Portfolio Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-black?style=for-the-badge&logo=three.js&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-## Available Scripts
+## 📋 概要
 
-In the project directory, you can run:
+このリポジトリは私のポートフォリオサイトのソースコードです。React + TypeScriptで構築され、Three.jsを使用した3Dグラフィックスやインタラクティブな要素を含んでいます。
 
-### `npm start`
+## 🛠️ 使用技術
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **Frontend Framework**: React 19.0.0
+- **Language**: TypeScript
+- **3D Graphics**: Three.js (@react-three/fiber, @react-three/drei)
+- **Styling**: CSS3
+- **Form Handling**: React Hook Form
+- **Animations**: 
+  - TSParticles
+  - React Lottie
+  - React Simple Typewriter
+- **Email Service**: EmailJS
+- **Icons**: React Icons
+- **Build Tool**: Create React App
+- **Deployment**: GitHub Pages
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🚀 セットアップ
 
-### `npm test`
+### 前提条件
+- Node.js (推奨: v16以上)
+- npm または yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### インストール
 
-### `npm run build`
+```bash
+# リポジトリをクローン
+git clone https://github.com/omuomuMG/Portfolio.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# ディレクトリに移動
+cd Portfolio
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# 依存関係をインストール
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 💻 開発
 
-### `npm run eject`
+### 開発サーバーの起動
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いて確認できます。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### その他のコマンド
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+# テストの実行
+npm test
 
-## Learn More
+# プロダクションビルド
+npm run build
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# デプロイ
+npm run deploy
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📦 主要な依存関係
+
+- **@react-three/fiber** & **@react-three/drei**: Three.jsのReactバインディング
+- **@tsparticles/react**: パーティクルエフェクト
+- **@emailjs/browser**: メール送信機能
+- **react-hook-form**: フォーム管理
+- **react-icons**: アイコンライブラリ
+---
+
+Created with ❤️ by [omuomuMG](https://github.com/omuomuMG)
