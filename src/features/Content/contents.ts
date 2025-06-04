@@ -8,7 +8,7 @@ import {
   SiQt as qt,
   SiNextdotjs as next,
   SiTypescript as typescript,
-  SiSupabase as supabse
+  SiSupabase as supabse,
 } from "react-icons/si";
 import { IoLogoFirebase as firebase } from "react-icons/io5";
 
